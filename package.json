@@ -1,0 +1,54 @@
+{
+  "name": "pwned-password",
+  "version": "0.0.1",
+  "description": "Web component built with Stencil that utilizes native form validation to prevent the use of passwords found in previous data breaches via Have I Been Pwned API",
+  "module": "dist/esm/index.js",
+  "main": "dist/index.js",
+  "types": "dist/types/components.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "stencil build",
+    "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
+    "serve": "stencil-dev-server",
+    "start": "npm run dev",
+    "test": "jest",
+    "test.watch": "jest --watch"
+  },
+  "dependencies": {
+    "crypto-js": "^3.1.9-1"
+  },
+  "devDependencies": {
+    "@stencil/core": "^0.9.1",
+    "@stencil/dev-server": "latest",
+    "@stencil/utils": "latest",
+    "@types/crypto-js": "^3.1.40",
+    "@types/jest": "^21.1.1",
+    "jest": "^21.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edgeworkscreative/pwned-password.git"
+  },
+  "author": "Edgeworks Creative",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edgeworkscreative/pwned-password"
+  },
+  "homepage": "https://github.com/edgeworkscreative/pwned-password",
+  "jest": {
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json",
+      "jsx"
+    ]
+  }
+}
