@@ -3,40 +3,27 @@
 
 # Pwned Password Component
 
-Web component built with [Stencil](https://stenciljs.com) that utilizes [native form validation](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation) to prevent the use of passwords found in previous data breaches via [Have I Been Pwned API](https://haveibeenpwned.com)
+Web component built with [Stencil](https://stenciljs.com) that utilizes the [Have I Been Pwned API](https://haveibeenpwned.com) to prevent the use of passwords found in previous data breaches.
 
 Only the first 5 characters of the SHA-1 hash are sent to [Have I Been Pwned](https://haveibeenpwned.com/API/v2#SearchingPwnedPasswordsByRange).
 
-
 ## Using the Pwned Password component on your site
 
-Simply place this script tag `<script src="https://unpkg.com/pwned-password@0.0.1/dist/pwned-password.js"></script>` in the `<head>` of your website.
+Simply place this script tag `<script src="https://unpkg.com/pwned-password@latest/dist/pwned-password.js"></script>` in the `<head>` of your website.
 
 ## Usage
 
-### Basic
-
-![Preview](screenshot.png)
-
 ```html
-<pwned-password 
-    input-name="password" 
-    input-id="password" 
-    input-class="form-control" 
-    input-placeholder="Enter your password" />
+<pwned-password name="password" placeholder="Enter your password"></pwned-password>
 ```
 
-### Custom error message
-
-`$COUNT` will be replaced with the number of times the password has been found.
-
-![Preview](screenshot-custom-error-message.png)
-
-```html
-<pwned-password 
-    error-message="Custom error message - password found $COUNT times" 
-    input-name="password" 
-    input-id="password" 
-    input-class="form-control" 
-    input-placeholder="Enter your password" />
+```javascript
+document.addEventListener('pwnedPasswordFound', (e) => {
+  if (e.detail === 0) {
+    let password =  e.srcElement.querySelector('input').value;
+    console.log('Password hasn\'t been pwned - submit your form');
+  } else {
+    alert(`Password has been pwned ${e.detail} times!`);
+  }
+})
 ```

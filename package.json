@@ -1,7 +1,7 @@
 {
   "name": "pwned-password",
   "version": "0.0.1",
-  "description": "Web component built with Stencil that utilizes native form validation to prevent the use of passwords found in previous data breaches via Have I Been Pwned API",
+  "description": "Web component built with Stencil that utilizes the Have I Been Pwned API to prevent the use of passwords found in previous data breaches.",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
   "types": "dist/types/components.d.ts",
@@ -10,23 +10,23 @@
     "dist/"
   ],
   "scripts": {
-    "build": "stencil build",
-    "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
-    "serve": "stencil-dev-server",
-    "start": "npm run dev",
+    "build": "stencil build --docs",
+    "start": "stencil build --dev --watch --serve",
     "test": "jest",
-    "test.watch": "jest --watch"
+    "test.watch": "jest --watch",
+    "changelog": "conventional-changelog -i CHANGELOG.md -s"
   },
   "dependencies": {
     "crypto-js": "^3.1.9-1"
   },
   "devDependencies": {
-    "@stencil/core": "^0.9.1",
-    "@stencil/dev-server": "latest",
+    "@stencil/core": "^0.14.0-1",
     "@stencil/utils": "latest",
-    "@types/crypto-js": "^3.1.40",
-    "@types/jest": "^21.1.1",
-    "jest": "^21.2.1"
+    "@types/crypto-js": "^3.1.43",
+    "@types/jest": "^23.3.5",
+    "conventional-changelog-cli": "^2.0.5",
+    "jest": "^23.5.0",
+    "workbox-build": "3.4.1"
   },
   "repository": {
     "type": "git",
