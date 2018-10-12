@@ -9,9 +9,12 @@ Only the first 5 characters of the SHA-1 hash are sent to [Have I Been Pwned](ht
 
 ## Using the Pwned Password component on your site
 
-Simply place this script tag `<script src="https://unpkg.com/pwned-password@latest/dist/pwned-password.js"></script>` in the `<head>` of your website.
+Simply place this script tag in the `<head>` of your website:
+```html
+<script src="https://unpkg.com/@edgeworkscreative/pwned-password@latest/dist/pwned-password.js"></script>
+```` 
 
-## Usage
+Now you can use the component anywhere in the body of your site:
 
 ```html
 <pwned-password name="password" placeholder="Enter your password"></pwned-password>
