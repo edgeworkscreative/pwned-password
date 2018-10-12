@@ -7,6 +7,8 @@ Web component built with [Stencil](https://stenciljs.com) that utilizes the [Hav
 
 Only the first 5 characters of the SHA-1 hash are sent to [Have I Been Pwned](https://haveibeenpwned.com/API/v2#SearchingPwnedPasswordsByRange).
 
+[DEMO](https://jsfiddle.net/91abpLr8/)
+
 ## Using the Pwned Password component on your site
 
 Simply place this script tag in the `<head>` of your website:
