@@ -1,6 +1,6 @@
 {
   "name": "@edgeworkscreative/pwned-password",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Web component built with Stencil that utilizes the Have I Been Pwned API to prevent the use of passwords found in previous data breaches.",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
